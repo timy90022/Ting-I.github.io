@@ -454,63 +454,25 @@
       
         
           
-            <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+            <p>
+              
 
-<ul>
-<li>Author: Hei Law, Jia Deng</li>
-<li>Paper: <a href="https://arxiv.org/pdf/1808.01244.pdf" target="_blank" rel="noopener">https://arxiv.org/pdf/1808.01244.pdf</a></li>
-<li>Conference: European Conference on Computer Vision (ECCV), 2018</li>
-<li>Code: <a href="https://github.com/princeton-vl/CornerNet" target="_blank" rel="noopener">https://github.com/princeton-vl/CornerNet</a></li>
-</ul>
-<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p><img src="1.png" alt></p>
-<ul>
-<li><p>This paper didn’t use anchor box in object detection field. (Anchor-free)</p>
-</li>
-<li><p>Predict left-top corner and right-bottom corner. So that, the the two corner form a bounding box. </p>
-</li>
-<li><p>論文中並未使用到Anchor-box，是一篇Anchor-free的方法。 </p>
-</li>
-<li><p>預測左上角及右下角兩個點。進而組成一個bounding box(預測框)。</p>
-</li>
-</ul>
-<h1 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h1><p><img src="2.png" alt></p>
-<ul>
-<li><p>It use Hourglass Network to take feature map. Most of object detection architecture use ResNet or VGG to take feature. (Hourglass Network is suit for predict corner, e.g. pose estimation)</p>
-</li>
-<li><p>Propose corner pooling to better localize the corners by encoding explicit prior knowledge. </p>
-</li>
-<li><p>The output include heatmap, embeddings and offsets. </p>
-<ul>
-<li>Heatmap: Decide the position of corner.</li>
-<li>Embedding: Grouping the left-top and right-bottom corner.</li>
-<li>Offsets: Calculate the offset of the corner position.</li>
-</ul>
-</li>
-<li><p>使用Hourglass Network 為 backbone。 大部分object detection的work都使用ResNet or VGG來提取feature。 （Hourglass Network 大多是用來預測“點”，像是pose estimation這類的work）</p>
-</li>
-<li><p>提出corner pooling，提高定位corner的準確度。</p>
-</li>
-<li><p>output有heatmap, embeddings and offsets. </p>
-<ul>
-<li>Heatmap: 決定“點”位置。</li>
-<li>Embedding: 為了要組合“左上角點”以及“右下角點”。</li>
-<li>Offsets: 計算偏差量。</li>
-</ul>
-</li>
-</ul>
-<h1 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h1><p><img src="3.png" alt></p>
-<p>This is for heatmap loss. Although there is no anchor-box, all of the feature map position can be a corner. It still will be too much imbalance between positive position and negative position. So the paper also use <a href="https://arxiv.org/pdf/1708.02002.pdf" target="_blank" rel="noopener">Focal Loss</a> as Loss function.</p>
-<p>這個是用在heatmap上的loss。 雖然沒有用到anchor-box，但依然利用整個feature map當作預測位置。依然會有正負樣本不平衡的問題，因此利用了<a href="https://arxiv.org/pdf/1708.02002.pdf" target="_blank" rel="noopener">Focal Loss</a>來解決正負樣本不平衡的問題。</p>
-<p><img src="4.png" alt></p>
-<p>This loss is for offsets. It adjust the corner locations before remapping them to the input resolution.</p>
-<p>這個是用在offsets上的loss。 為了調整“點”到input image 解析度上更精確的位置。</p>
-<p><img src="5.png" alt></p>
-<p>This loss is for embeedding. e<sub>t<sub>k</sub></sub> is the top-left corner embedding vector. e<sub>b<sub>k</sub></sub> is the bottom-right corner embedding vector. And e<sub>k</sub> is the average of e<sub>t<sub>k</sub></sub> and e<sub>b<sub>k</sub></sub>. </p>
-<p>(4) make the closer embedding vector between  e<sub>t<sub>k</sub></sub> and e<sub>b<sub>k</sub></sub>. </p>
-<p>(5) make the different embedding vector which means different corner far away.</p>
-<p><img src="6.png" alt></p>
 
+Author: Hei Law, Jia Deng
+Paper: https://arxiv.org/pdf/1808.01244.pdf
+Conference: European Conference on Computer Vision (ECCV), 2018
+Code: https:/
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/09/CornerNet-Detecting-Objects-as-Paired-Keypoints/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -701,17 +663,23 @@
       
         
           
-            <p>所有的人都缺受歡迎（包括已經很受歡迎的人）。<br>害怕（推出的產品、著作、演說…）不受歡迎。</p>
-<ol>
-<li>尊重每一個人，喜歡別人。人的互惠天性導致會喜歡那些喜歡我們的人。<br>（永遠無法原諒的人：鄙視他的人）</li>
-<li>務必誠懇，親自表達，親自親為。<br>（敷衍地表達重視，反而會表達折扣。自動發送的信件、沒誠意的包裹）</li>
-<li>拉下“無知之幕”，平等對待每一個人。<br>（不要因為他人的成就不同、財力不同，而有不同的對待方式）</li>
-<li>如果你想交朋友，請他幫一個忙。<br>（別人幫你一個小忙，就會傾向於幫你一個更大的忙）</li>
-<li>互惠互利，是人類本能的衝動之一。<br>（因為在他人身上投入、建立更多信任）<br>（當作一種仲介，傳達尊重）</li>
-<li>人生是無限遊戲，成為受歡迎的人，在關鍵時刻也許就會受貴人相助。<br>（人脈的重要性）</li>
-</ol>
+            <p>
+              所有的人都缺受歡迎（包括已經很受歡迎的人）。害怕（推出的產品、著作、演說…）不受歡迎。
 
+尊重每一個人，喜歡別人。人的互惠天性導致會喜歡那些喜歡我們的人。（永遠無法原諒的人：鄙視他的人）
+務必誠懇，親自表達，親自親為。（敷衍地表達重視，反而會表達折扣。自動發送的信件、沒誠意的包裹）
+拉下“無知之幕”
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/06/22/Man/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -861,21 +829,19 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+            <p>
+              Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/06/22/hello-world/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
