@@ -94,19 +94,24 @@
 
 
 
-  <meta name="description" content="Author: Hei Law, Jia Deng Paper: https://arxiv.org/pdf/1808.01244.pdf Conference: European Conference on Computer Vision (ECCV), 2018 Code: https://github.com/princeton-vl/CornerNet">
-<meta name="keywords" content="anchor-free,ECCV&#39;18">
+  <meta name="description" content="Author: Hei Law, Jia Deng Paper: https://arxiv.org/pdf/1808.01244.pdf Conference: European Conference on Computer Vision (ECCV), 2018 Code: https://github.com/princeton-vl/CornerNet  Abstract  This">
+<meta name="keywords" content="objection detection,Anchor-free,ECCV&#39;18">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CornerNet: Detecting Objects as Paired Keypoints">
 <meta property="og:url" content="http://yoursite.com/2019/08/09/CornerNet-Detecting-Objects-as-Paired-Keypoints/index.html">
 <meta property="og:site_name" content="Timy">
-<meta property="og:description" content="Author: Hei Law, Jia Deng Paper: https://arxiv.org/pdf/1808.01244.pdf Conference: European Conference on Computer Vision (ECCV), 2018 Code: https://github.com/princeton-vl/CornerNet">
+<meta property="og:description" content="Author: Hei Law, Jia Deng Paper: https://arxiv.org/pdf/1808.01244.pdf Conference: European Conference on Computer Vision (ECCV), 2018 Code: https://github.com/princeton-vl/CornerNet  Abstract  This">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2019/08/09/CornerNet-Detecting-Objects-as-Paired-Keypoints/1.png">
-<meta property="og:updated_time" content="2019-08-09T09:50:38.859Z">
+<meta property="og:image" content="http://yoursite.com/2019/08/09/CornerNet-Detecting-Objects-as-Paired-Keypoints/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/09/CornerNet-Detecting-Objects-as-Paired-Keypoints/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/09/CornerNet-Detecting-Objects-as-Paired-Keypoints/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/09/CornerNet-Detecting-Objects-as-Paired-Keypoints/5.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/09/CornerNet-Detecting-Objects-as-Paired-Keypoints/6.png">
+<meta property="og:updated_time" content="2019-08-10T09:01:33.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CornerNet: Detecting Objects as Paired Keypoints">
-<meta name="twitter:description" content="Author: Hei Law, Jia Deng Paper: https://arxiv.org/pdf/1808.01244.pdf Conference: European Conference on Computer Vision (ECCV), 2018 Code: https://github.com/princeton-vl/CornerNet">
+<meta name="twitter:description" content="Author: Hei Law, Jia Deng Paper: https://arxiv.org/pdf/1808.01244.pdf Conference: European Conference on Computer Vision (ECCV), 2018 Code: https://github.com/princeton-vl/CornerNet  Abstract  This">
 <meta name="twitter:image" content="http://yoursite.com/2019/08/09/CornerNet-Detecting-Objects-as-Paired-Keypoints/1.png">
 
 
@@ -367,12 +372,24 @@
                 
               
 
-              <time title="Created: 2019-08-09 17:46:58 / Modified: 17:50:38" itemprop="dateCreated datePublished" datetime="2019-08-09T17:46:58+08:00">2019-08-09</time>
+              <time title="Created: 2019-08-09 17:46:58" itemprop="dateCreated datePublished" datetime="2019-08-09T17:46:58+08:00">2019-08-09</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-10 17:01:33" itemprop="dateModified" datetime="2019-08-10T17:01:33+08:00">2019-08-10</time>
               
             
           </span>
@@ -444,13 +461,61 @@
       
 
       
-        <ul>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+<ul>
 <li>Author: Hei Law, Jia Deng</li>
 <li>Paper: <a href="https://arxiv.org/pdf/1808.01244.pdf" target="_blank" rel="noopener">https://arxiv.org/pdf/1808.01244.pdf</a></li>
 <li>Conference: European Conference on Computer Vision (ECCV), 2018</li>
 <li>Code: <a href="https://github.com/princeton-vl/CornerNet" target="_blank" rel="noopener">https://github.com/princeton-vl/CornerNet</a></li>
 </ul>
-<p><img src="1.png" alt></p>
+<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p><img src="1.png" alt></p>
+<ul>
+<li><p>This paper didn’t use anchor box in object detection field. (Anchor-free)</p>
+</li>
+<li><p>Predict left-top corner and right-bottom corner. So that, the the two corner form a bounding box. </p>
+</li>
+<li><p>論文中並未使用到Anchor-box，是一篇Anchor-free的方法。 </p>
+</li>
+<li><p>預測左上角及右下角兩個點。進而組成一個bounding box(預測框)。</p>
+</li>
+</ul>
+<h1 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h1><p><img src="2.png" alt></p>
+<ul>
+<li><p>It use Hourglass Network to take feature map. Most of object detection architecture use ResNet or VGG to take feature. (Hourglass Network is suit for predict corner, e.g. pose estimation)</p>
+</li>
+<li><p>Propose corner pooling to better localize the corners by encoding explicit prior knowledge. </p>
+</li>
+<li><p>The output include heatmap, embeddings and offsets. </p>
+<ul>
+<li>Heatmap: Decide the position of corner.</li>
+<li>Embedding: Grouping the left-top and right-bottom corner.</li>
+<li>Offsets: Calculate the offset of the corner position.</li>
+</ul>
+</li>
+<li><p>使用Hourglass Network 為 backbone。 大部分object detection的work都使用ResNet or VGG來提取feature。 （Hourglass Network 大多是用來預測“點”，像是pose estimation這類的work）</p>
+</li>
+<li><p>提出corner pooling，提高定位corner的準確度。</p>
+</li>
+<li><p>output有heatmap, embeddings and offsets. </p>
+<ul>
+<li>Heatmap: 決定“點”位置。</li>
+<li>Embedding: 為了要組合“左上角點”以及“右下角點”。</li>
+<li>Offsets: 計算偏差量。</li>
+</ul>
+</li>
+</ul>
+<h1 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h1><p><img src="3.png" alt></p>
+<p>This is for heatmap loss. Although there is no anchor-box, all of the feature map position can be a corner. It still will be too much imbalance between positive position and negative position. So the paper also use <a href="https://arxiv.org/pdf/1708.02002.pdf" target="_blank" rel="noopener">Focal Loss</a> as Loss function.</p>
+<p>這個是用在heatmap上的loss。 雖然沒有用到anchor-box，但依然利用整個feature map當作預測位置。依然會有正負樣本不平衡的問題，因此利用了<a href="https://arxiv.org/pdf/1708.02002.pdf" target="_blank" rel="noopener">Focal Loss</a>來解決正負樣本不平衡的問題。</p>
+<p><img src="4.png" alt></p>
+<p>This loss is for offsets. It adjust the corner locations before remapping them to the input resolution.</p>
+<p>這個是用在offsets上的loss。 為了調整“點”到input image 解析度上更精確的位置。</p>
+<p><img src="5.png" alt></p>
+<p>This loss is for embeedding. e<sub>t<sub>k</sub></sub> is the top-left corner embedding vector. e<sub>b<sub>k</sub></sub> is the bottom-right corner embedding vector. And e<sub>k</sub> is the average of e<sub>t<sub>k</sub></sub> and e<sub>b<sub>k</sub></sub>. </p>
+<p>(4) make the closer embedding vector between  e<sub>t<sub>k</sub></sub> and e<sub>b<sub>k</sub></sub>. </p>
+<p>(5) make the different embedding vector which means different corner far away.</p>
+<p><img src="6.png" alt></p>
 
       
     </div>
@@ -477,7 +542,9 @@
         
         <div class="post-tags">
           
-            <a href="/tags/anchor-free/" rel="tag"># anchor-free</a>
+            <a href="/tags/objection-detection/" rel="tag"># objection detection</a>
+          
+            <a href="/tags/Anchor-free/" rel="tag"># Anchor-free</a>
           
             <a href="/tags/ECCV-18/" rel="tag"># ECCV'18</a>
           
@@ -551,8 +618,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -615,7 +691,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -642,6 +720,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Model"><span class="nav-number">2.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Loss-Function"><span class="nav-number">3.</span> <span class="nav-text">Loss Function</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
