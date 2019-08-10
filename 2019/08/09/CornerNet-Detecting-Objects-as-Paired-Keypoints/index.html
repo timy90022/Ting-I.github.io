@@ -108,7 +108,9 @@
 <meta property="og:image" content="http://yoursite.com/2019/08/09/CornerNet-Detecting-Objects-as-Paired-Keypoints/4.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/09/CornerNet-Detecting-Objects-as-Paired-Keypoints/5.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/09/CornerNet-Detecting-Objects-as-Paired-Keypoints/6.png">
-<meta property="og:updated_time" content="2019-08-10T09:01:33.302Z">
+<meta property="og:image" content="http://yoursite.com/2019/08/09/CornerNet-Detecting-Objects-as-Paired-Keypoints/7.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/09/CornerNet-Detecting-Objects-as-Paired-Keypoints/8.png">
+<meta property="og:updated_time" content="2019-08-10T16:49:31.844Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CornerNet: Detecting Objects as Paired Keypoints">
 <meta name="twitter:description" content="Author: Hei Law, Jia Deng Paper: https://arxiv.org/pdf/1808.01244.pdf Conference: European Conference on Computer Vision (ECCV), 2018 Code: https://github.com/princeton-vl/CornerNet  Abstract  This">
@@ -389,7 +391,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-08-10 17:01:33" itemprop="dateModified" datetime="2019-08-10T17:01:33+08:00">2019-08-10</time>
+                <time title="Modified: 2019-08-11 00:49:31" itemprop="dateModified" datetime="2019-08-11T00:49:31+08:00">2019-08-11</time>
               
             
           </span>
@@ -484,7 +486,7 @@
 <ul>
 <li><p>It use Hourglass Network to take feature map. Most of object detection architecture use ResNet or VGG to take feature. (Hourglass Network is suit for predict corner, e.g. pose estimation)</p>
 </li>
-<li><p>Propose corner pooling to better localize the corners by encoding explicit prior knowledge. </p>
+<li><p>Propose <strong>corner pooling</strong> to better localize the corners by encoding explicit prior knowledge. </p>
 </li>
 <li><p>The output include heatmap, embeddings and offsets. </p>
 <ul>
@@ -495,7 +497,7 @@
 </li>
 <li><p>使用Hourglass Network 為 backbone。 大部分object detection的work都使用ResNet or VGG來提取feature。 （Hourglass Network 大多是用來預測“點”，像是pose estimation這類的work）</p>
 </li>
-<li><p>提出corner pooling，提高定位corner的準確度。</p>
+<li><p>提出<strong>corner pooling</strong>，提高定位corner的準確度。</p>
 </li>
 <li><p>output有heatmap, embeddings and offsets. </p>
 <ul>
@@ -515,7 +517,20 @@
 <p>This loss is for embeedding. e<sub>t<sub>k</sub></sub> is the top-left corner embedding vector. e<sub>b<sub>k</sub></sub> is the bottom-right corner embedding vector. And e<sub>k</sub> is the average of e<sub>t<sub>k</sub></sub> and e<sub>b<sub>k</sub></sub>. </p>
 <p>(4) make the closer embedding vector between  e<sub>t<sub>k</sub></sub> and e<sub>b<sub>k</sub></sub>. </p>
 <p>(5) make the different embedding vector which means different corner far away.</p>
+<p>此loss是用來修正embeedding feature map。e<sub>t<sub>k</sub></sub> 是左上角點的 embedding vector. e<sub>b<sub>k</sub></sub> 是右下角點的 embedding vector. e<sub>k</sub> 是 e<sub>t<sub>k</sub></sub> 和 e<sub>b<sub>k</sub></sub> 的平均值。</p>
+<p>(4) 是將 e<sub>t<sub>k</sub></sub> 和 e<sub>b<sub>k</sub></sub> 的 embedding vector 拉近。</p>
+<p>(5) 是為了將不同“點”的 embedding vector 遠離。 </p>
 <p><img src="6.png" alt></p>
+<p>This combine all of the loss function. \(\alpha\), \(\beta\), \(\gamma\) is hyperparameter. </p>
+<p>\(\alpha\) = 0.1,<br>\(\beta\) = 0.1,<br>\(\gamma\) = 1</p>
+<h1 id="Experiement"><a href="#Experiement" class="headerlink" title="Experiement"></a>Experiement</h1><p><img src="7.png" alt></p>
+<p>It show up that the corner pooling can improve a lot of accuracy.</p>
+<p>上方圖表可以顯示出，corner pooling 確實可以幫助 CornerNet 提高精確度。</p>
+<p><img src="8.png" alt></p>
+<p>Above Table compare with most of object detection work. It can be SOTA in one-stage ways.</p>
+<p>上方圖表比較了大部分常見的object detection的方法，在one-stage上可以達到最佳的效果。</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>This paper propose a new idea for one-stage object detection. It actually broke the old frame and provide a new research way for us. Although it also not good at inference time,  I think that this idea will bring huge impact on one-stage object detection.</p>
+<p>此論文提出一個新的one-stage object detection概念。顛覆以往，常用anchor的框架。雖然在時間上依然無法有顯著的成長，但我認為他的概念會對未來one-stage object detection造成巨大的影響。</p>
 
       
     </div>
@@ -731,7 +746,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Model"><span class="nav-number">2.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Loss-Function"><span class="nav-number">3.</span> <span class="nav-text">Loss Function</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Model"><span class="nav-number">2.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Loss-Function"><span class="nav-number">3.</span> <span class="nav-text">Loss Function</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiement"><span class="nav-number">4.</span> <span class="nav-text">Experiement</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Conclusion"><span class="nav-number">5.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
             
 
           </div>
